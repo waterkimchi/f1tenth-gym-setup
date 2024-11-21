@@ -32,5 +32,24 @@ Run the keyboard control board
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
+# Safety Node Setup
+
+Source two environments under /sim_ws/:
+```
+source /opt/ros/foxy/setup.bash
+source install/setup.bash
+```
+Run the command under /sim_ws/
+```
+colcon build --packages-select safety_node
+```
+Source the workspace environment again
+```
+source install/setup.bash
+```
+Run the safety_node node
+```
+ros2 run safety_node safety_node
+```
 
 Edited by: Hyunsu Lim
