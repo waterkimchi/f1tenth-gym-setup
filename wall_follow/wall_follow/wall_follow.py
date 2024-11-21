@@ -20,10 +20,10 @@ class WallFollow(Node):
         self.drive_pub = self.create_publisher(AckermannDriveStamped, drive_topic, 10)
 
         # Set PID gains
-        self.kp = 1.0
+        self.kp = 2.0
         self.kd = 0.1
         self.ki = 0.01
-        self.desired_distance_to_wall = 0.8
+        self.desired_distance_to_wall = 1.1
 
         # Store history
         self.integral = 0.0
@@ -70,7 +70,7 @@ class WallFollow(Node):
         alpha = np.arctan2(a*np.cos(theta)-b,a*np.cos(theta))
         ab = b*np.cos(alpha)
         cd = ab+1.5*np.sin(alpha)
-        error = 1.5-cd
+        error = dist-cd
 
         return -error
 

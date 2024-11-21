@@ -25,6 +25,7 @@ class SafetyNode(Node):
         NOTE that the x component of the linear velocity in odom is the speed
         """
         self.speed = 0.
+        # subscribes to the data with .create_subscription
         self.create_subscription(Odometry, '/ego_racecar/odom', self.odom_callback, 10)
         self.create_subscription(LaserScan, '/scan', self.scan_callback, 10)
         self.drive_publisher = self.create_publisher(AckermannDriveStamped, '/drive', 10)
