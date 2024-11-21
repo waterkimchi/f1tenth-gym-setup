@@ -52,4 +52,24 @@ Run the safety_node node
 ros2 run safety_node safety_node
 ```
 
+# Wall Follow Setup
+
+Source two environments under /sim_ws/:
+```
+source /opt/ros/foxy/setup.bash
+source install/setup.bash
+```
+Run the command under /sim_ws/
+```
+colcon build --packages-select wall_follow
+```
+Source the workspace environment again
+```
+source install/setup.bash
+```
+Run the safety_node node
+```
+ros2 run wall_follow wall_follow
+```
+
 Edited by: Hyunsu Lim
