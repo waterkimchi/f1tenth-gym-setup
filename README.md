@@ -67,9 +67,9 @@ Source the workspace environment again
 ```
 source install/setup.bash
 ```
-Run the safety_node node
+Run the wall_follow node
 ```
-ros2 run wall_follow wall_follow
+ros2 run wall_follow wall_follow_node
 ```
 
 Edited by: Hyunsu Lim
