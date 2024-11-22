@@ -18,12 +18,11 @@ class WallFollow(Node):
         # Create subscribers and publishers
         self.lidar_sub = self.create_subscription(LaserScan, lidarscan_topic, self.scan_callback, 10)
         self.drive_pub = self.create_publisher(AckermannDriveStamped, drive_topic, 10)
-
-        # Set PID gains
-        self.kp = 2.0
+        # PID
+        self.kp = 2
         self.kd = 0.1
         self.ki = 0.01
-        self.desired_distance_to_wall = 1.1
+        self.desired_distance_wall = 1.1
 
         # Store history
         self.integral = 0.0
@@ -74,6 +73,7 @@ class WallFollow(Node):
 
         return -error
 
+
     def pid_control(self, error, velocity):
         """
         Based on the calculated error, publish vehicle control
@@ -111,7 +111,7 @@ class WallFollow(Node):
         """
         # Calculate the error using get_error()
           # Example desired distance to the wall in meters
-        error = self.get_error(msg, self.desired_distance_to_wall)
+        error = self.get_error(msg, self.desired_distance_wall)
         
         # Calculate desired car velocity based on error (you can adjust this logic as needed)
         velocity = 1.0  # Example constant velocity
