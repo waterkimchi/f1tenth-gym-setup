@@ -41,7 +41,7 @@ class SafetyNode(Node):
         ttc = ranges / relative_speeds
         min_ttc = np.min(ttc[ttc > 0])
 
-        ttc_threshold = 1.0
+        ttc_threshold = 3.0
 
         if min_ttc < ttc_threshold:
             print(min_ttc)
