@@ -39,18 +39,6 @@ class Dreamer(Node):
             10
         )
 
-        # TODO: set PID gains
-        # self.kp = 
-        # self.kd = 
-        # self.ki = 
-
-        # TODO: store history
-        # self.integral = 
-        # self.prev_error = 
-        # self.error = 
-
-        # TODO: store any necessary values you think you'll need
-
 
 def main(args=None):
     rclpy.init(args=args)
