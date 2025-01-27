@@ -24,8 +24,7 @@ Launch the simulation
 ```
 ros2 launch f1tenth_gym_ros gym_bridge_launch.py
 ```
-
-# Safety Node Setup
+# Node Setup
 
 Source two environments under /sim_ws/:
 ```
@@ -34,7 +33,7 @@ source install/setup.bash
 ```
 Run the command under /sim_ws/
 ```
-colcon build --packages-select safety_node
+colcon build --packages-select your_node
 ```
 Source the workspace environment again
 ```
@@ -42,27 +41,8 @@ source install/setup.bash
 ```
 Run the safety_node node
 ```
-ros2 run safety_node safety_node
+ros2 run your_package your_executable
 ```
 
-# Wall Follow Setup
-
-Source two environments under /sim_ws/:
-```
-source /opt/ros/foxy/setup.bash
-source install/setup.bash
-```
-Run the command under /sim_ws/
-```
-colcon build --packages-select wall_follow
-```
-Source the workspace environment again
-```
-source install/setup.bash
-```
-Run the wall_follow node
-```
-ros2 run wall_follow wall_follow_node
-```
 
 Edited by: Hyunsu Lim
